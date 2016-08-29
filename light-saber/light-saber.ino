@@ -1,3 +1,6 @@
+int button = 7;
+int last_light;
+
 void setup() {
   pinMode(13, OUTPUT);
   pinMode(12, OUTPUT);
@@ -5,19 +8,26 @@ void setup() {
   pinMode(10, OUTPUT);
   pinMode(9, OUTPUT);
   pinMode(8, OUTPUT);
+  pinMode(button, INPUT);
 
 }
 
 void loop() {
-  for (int i = 8; i <= 14; i++) {
+  
+  if (digitalRead(button) == HIGH){
+  for (int i = 8; i <= 13; i++) {
 
   digitalWrite(i, HIGH);
   delay(500);
+  last_light = i;
   }
-  for (int i = 13; i >= 8; i--){
+  }
+  
+  for (int i = last_light; i >= 8; i--){
     digitalWrite(i, LOW);
     delay(500);
   }
-}
+  }
+
 
 
