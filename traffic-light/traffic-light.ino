@@ -1,6 +1,9 @@
 int north_red = 13;
 int north_yellow = 12;
 int north_green = 11;
+int south_green = 10;
+int south_yellow = 9;
+int south_red = 8;
 
 int button = 7;
 void setup() {
@@ -13,16 +16,7 @@ pinMode(button, INPUT);
 }
 
 void loop() {
-bool button_press = digitalRead(button);
-Serial.print(button_press);
 
-/*digitalWrite(north_green, HIGH);
+stoplight();
 delay(2000);
-digitalWrite(north_green, LOW);
-digitalWrite(north_yellow, HIGH);
-delay(500);
-digitalWrite(north_yellow, LOW);
-digitalWrite(north_red, HIGH);
-delay(2000);
-digitalWrite(north_red, LOW);*/
 }
