@@ -15,19 +15,25 @@ void setup() {
 void loop() {
   
   if (digitalRead(button) == HIGH){
-  for (int i = 8; i <= 13; i++) {
-
-  digitalWrite(i, HIGH);
-  delay(500);
-  last_light = i;
-  }
-  }
   
-  for (int i = last_light; i >= 8; i--){
-    digitalWrite(i, LOW);
-    delay(500);
-  }
-  }
+    for (int i = 8; i <= 13; i++) {
+
+      digitalWrite(i, HIGH);
+      delay(500);
+      last_light = i;
+      if (digitalRead(button) == LOW){
+      break;
+        }
+    }
+  
+    
+    for (int i = last_light; i >= 8; i--){
+      digitalWrite(i, LOW);
+      delay(500);
+      }
+    }
+}
+
 
 
 
